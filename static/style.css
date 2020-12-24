@@ -1,0 +1,36 @@
+.list{
+    font-size: 28px;text-align: center;color: rgb(15, 1, 4);
+}
+.product{
+    display: flex;flex-wrap: wrap;
+    justify-content: center;
+
+}
+.product>.content{
+    flex: none;color:rgb(244, 246, 248);margin-left: 20px;margin-right: 20px;height: 360px;;
+}
+.about{
+    margin-left: auto;margin-right: auto;
+}
+@media (max-width: 1200px) {
+    .product>.content{
+        width:45%
+    }
+}
+@media (max-width: 500px) {
+    .product>.content{
+        width:90%
+    }
+}
+a:visited{
+    text-decoration: none
+}
+a:link{
+    text-decoration: none
+}
+form{
+    line-height: 2em;
+}
+form>input{
+    padding: 5px 10px;border: 1px solid;border-radius: 5%;
+}

@@ -1,0 +1,13 @@
+<main style="width: 50%;margin-left: auto;margin-right: auto;border: solid black;margin-top: 50px;">
+    <h1 style="text-align: center;">Sign in</h1>
+    <form onsubmit="alert('表單送出');" style="text-align: center;font-size: x-large;">
+        帳號：<input type="text" placeholder="請輸入6~12位數字或英文" required pattern="[\w]{6,12}"/>
+        <br/>
+        密碼：<input type="password" placeholder="請輸入8~16位數字或英文" required required pattern="[\w]{8,16}"/>
+        <br/>
+        信箱：<input type="email" required pattern="\w+@\w+\.\w+"/>
+        <br/><br/>
+        <input type="submit" value="提交"/>
+    </form>
+</main>  
+ 

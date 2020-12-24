@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Woman Shop</title>
+        <link rel="stylesheet" type="text/css" href="static/style.css">
+        <style type="text/css">
+            img{
+                margin: 10px;
+            }
+            .item{
+                display: inline-block;vertical-align: top;font-size: 28px;margin-right: 60px;font-weight: bold;color: rgb(243, 244, 245);
+                text-align: center;
+            }
+            .item:hover{
+                color: rgb(2, 60, 117);
+            }
+            
+        </style>
+        <script type="text/javascript">
+            function toggleMenu(){
+               var desc = document.getElementById("desc")
+               var context = document.getElementById("context")
+               if (desc.style.display == "none"){
+                desc.style.display="block"
+                context.innerHTML="(內容已打開)"
+               }else{
+                   desc.style.display="none"
+                   context.innerHTML="(內容已關閉)"
+               }
+            }
+            function getData(page){
+                var req = new XMLHttpRequest();
+                req.open('get','http://127.0.0.1:5000/'+page);
+                req.onload=function(){
+                    var detail = document.getElementById('detail');
+                    detail.innerHTML = this.responseText;
+                }
+                req.send();
+            }
+        </script>
+    </head>
+
+    <body style="margin: 0px;background-color: rgba(250, 249, 243, 0.8);background-position: center;background-size: cover;">
+        <div class="head" style="background: linear-gradient(135deg, rgb(221, 219, 219) 0%,rgb(158, 156, 156) 39%,rgb(99, 97, 98) 69%,rgb(43, 39, 40) 100%);
+        text-align: center;position: fixed;width: 100%">
+            <img src="static/logo.png/" id="logo" width='300' height="80" alt='Logo Picture' title="index" />
+            
+            <div style="width: 100% autp;margin-left: auto;margin-right: auto;padding: 5px;">
+                <div class="item" onclick="getData('product');">Product</div>
+                <!--onclick="javascript:location.href='/product'"-->
+                <div class="item" onclick="getData('about');">About</div>
+                <div class="item" onclick="getData('sign_in');">Sign in</div>
+            </div>             
+        </div>
+        <div style="height: 150px;"></div>
+            <div id="detail">
+                
+            </div>
+    </body>
+
+</html>
